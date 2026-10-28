@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=19">
+<link rel="stylesheet" href="styles.css?v=21">
 <script>if(new URLSearchParams(location.search).has('lab'))document.documentElement.classList.add('lab-on');try{const s=JSON.parse(localStorage.getItem('yaaber-lab')||'{}');for(const k in s)document.documentElement.dataset[k]=s[k];}catch{}</script>
 </head>
 <body>
@@ -93,8 +93,8 @@
   <div class="art" id="stage">
     <div class="frame">
       <picture>
-        <source type="image/webp" srcset="img/hero/yaaber-hero-1280.webp 1280w, img/hero/yaaber-hero-1920.webp 1920w, img/hero/yaaber-hero-2560.webp 2560w, img/hero/yaaber-hero-3840.webp 3840w" sizes="(max-width:820px) 143vw, 178vh">
-        <img src="img/hero/yaaber-hero-1920.jpg" srcset="img/hero/yaaber-hero-1280.jpg 1280w, img/hero/yaaber-hero-1920.jpg 1920w, img/hero/yaaber-hero-2560.jpg 2560w, img/hero/yaaber-hero-3840.jpg 3840w" sizes="(max-width:820px) 143vw, 178vh" width="1920" height="1080" alt="A small white island shaped around a mint Y-shaped street, with a café, a record kiosk and a news cart at its foot." fetchpriority="high">
+        <source type="image/webp" srcset="img/hero/yaaber-hero-1280.webp 1280w, img/hero/yaaber-hero-1920.webp 1920w, img/hero/yaaber-hero-2560.webp 2560w, img/hero/yaaber-hero-3840.webp 3840w" sizes="(max-width:1024px) 143vw, 178vh">
+        <img src="img/hero/yaaber-hero-1920.jpg" srcset="img/hero/yaaber-hero-1280.jpg 1280w, img/hero/yaaber-hero-1920.jpg 1920w, img/hero/yaaber-hero-2560.jpg 2560w, img/hero/yaaber-hero-3840.jpg 3840w" sizes="(max-width:1024px) 143vw, 178vh" width="1920" height="1080" alt="A small white island shaped around a mint Y-shaped street, with a café, a record kiosk and a news cart at its foot." fetchpriority="high">
       </picture>
       <!-- hit areas: % of frame, from img/hero/anchors_pct.json (tools/p1_project_anchors.py) -->
       <button class="hit" data-obj="reel"  style="left:36.7%;top:39.2%;width:13.1%;height:24.4%" aria-label="Café: share a reel"></button>
@@ -280,6 +280,6 @@
 
 <script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js"}}</script>
 <script src="site.js?v=9"></script>
-<script src="hero-still.js?v=6"></script>
+<script src="hero-still.js?v=7"></script>
 </body>
 </html>

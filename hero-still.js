@@ -15,10 +15,10 @@
 (() => {
   const hero = document.querySelector('.hero-still'), frame = hero.querySelector('.frame'), NAV = 110, BOTTOM = 48;
   function lay() {
-    if (innerWidth <= 820) { frame.removeAttribute('style'); return; }
+    if (innerWidth <= 1024) { frame.removeAttribute('style'); return; }
     const vw = document.documentElement.clientWidth, hh = hero.clientHeight;
-    const pad = Math.min(34, Math.max(16, vw * 0.04)), cw = Math.min(1240, vw) - 2 * pad, cl = (vw - cw) / 2;
-    const h = Math.min((hh - NAV - BOTTOM) / 0.78, (0.618 * cw * 0.92) / 1.0667); // island fits height and the right column
+    const pad = Math.min(34, Math.max(16, vw * 0.04)), cw = Math.min(1360, vw) - 2 * pad, cl = (vw - cw) / 2;
+    const h = Math.min((hh - NAV - BOTTOM) / 0.78, (0.618 * cw * 0.98) / 1.0667); // island fits height and the right column
     const w = h * 16 / 9, cx = cl + cw * (0.382 + 0.618 / 2), cy = NAV + (hh - NAV - BOTTOM) / 2;
     Object.assign(frame.style, { width: w + 'px', height: h + 'px', left: (cx - 0.57 * w) + 'px', top: (cy - 0.48 * h) + 'px' });
   }
