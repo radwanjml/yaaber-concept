@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en" data-nav-pos="top" data-nav-hide="on" data-nav-mat="frosted">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yaaber: find it, Yab it, talk about it</title>
+<meta name="description" content="Yaaber is a social app for sharing reels, songs and news with friends, then chatting, calling or watching together about them. Explore it as a guest in your browser.">
+<meta name="theme-color" content="#0f3d2e">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yaaber, a concept redesign">
+<meta property="og:description" content="Find it. Yab it. Talk about it. An interactive concept for Yaaber by Radwan Jameel.">
+<meta property="og:image" content="https://radwanjml.github.io/yaaber-concept/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f3d2e'/%3E%3Cpath d='M8 7l8 9 8-9M16 16v10' stroke='%235fe0b0' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=19">
+<script>if(new URLSearchParams(location.search).has('lab'))document.documentElement.classList.add('lab-on');try{const s=JSON.parse(localStorage.getItem('yaaber-lab')||'{}');for(const k in s)document.documentElement.dataset[k]=s[k];}catch{}</script>
+</head>
+<body>
+
+<!-- icon sprite: minimal line icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16M15 9h4a1 1 0 0 1 1 1v11M3 21h18M8 8h3M8 12h3M8 16h3"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></symbol>
+  <symbol id="i-news" viewBox="0 0 24 24"><path d="M4 5h13v14a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2zM17 9h3v10a2 2 0 0 1-2 2M8 9h5M8 13h5M8 17h3"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+  <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-steth" viewBox="0 0 24 24"><path d="M6 3v6a5 5 0 0 0 10 0V3M11 14v2a5 5 0 0 0 10 0v-2"/><circle cx="21" cy="12" r="2"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V6M3 14h18v4M21 14v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11" r="2"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M10 14l-7-3 1.5-1.5L12 10l5-5c1-1 3-1.5 3.5-1s0 2.5-1 3.5l-5 5 .5 7.5L13.5 21l-3-7z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.6-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3z M14.5 6.5L17 4"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+  <symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.5-5.8M4 4v5h5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+</svg>
+
+<div class="concept"><b>Concept prototype</b> · an unofficial redesign proposal by Radwan Jameel. Not the live Yaaber site.</div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Yaaber home"><span class="logo-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 3l8 9 8-9M12 12v10" stroke="#5fe0b0" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>yaaber</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#how"><svg class="ic"><use href="#i-spark"/></svg>How it works</a>
+      <a href="#features"><svg class="ic"><use href="#i-grid"/></svg>Features</a>
+      <a href="#orgs"><svg class="ic"><use href="#i-building"/></svg>Organisations</a>
+      <a href="#faq"><svg class="ic"><use href="#i-help"/></svg>FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#get"><span class="nav-cta-label">Open Yaaber</span><svg class="ic"><use href="#i-arrow"/></svg><span class="sr">Open Yaaber</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="sheet"><svg class="ic"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+<nav class="sheet" id="sheet" aria-label="Mobile">
+  <a href="#how"><svg class="ic"><use href="#i-spark"/></svg>How it works</a>
+  <a href="#features"><svg class="ic"><use href="#i-grid"/></svg>Features</a>
+  <a href="#safety"><svg class="ic"><use href="#i-shield"/></svg>Safety</a>
+  <a href="#orgs"><svg class="ic"><use href="#i-building"/></svg>For organisations</a>
+  <a href="#get"><svg class="ic"><use href="#i-mobile"/></svg>Get the app</a>
+  <a href="#faq"><svg class="ic"><use href="#i-help"/></svg>FAQ</a>
+</nav>
+
+<main id="top">
+<!-- HERO (p1: rendered still, Blockout21) -->
+<section class="hero hero-still" aria-labelledby="h1">
+  <div class="art" id="stage">
+    <div class="frame">
+      <picture>
+        <source type="image/webp" srcset="img/hero/yaaber-hero-1280.webp 1280w, img/hero/yaaber-hero-1920.webp 1920w, img/hero/yaaber-hero-2560.webp 2560w, img/hero/yaaber-hero-3840.webp 3840w" sizes="(max-width:820px) 143vw, 178vh">
+        <img src="img/hero/yaaber-hero-1920.jpg" srcset="img/hero/yaaber-hero-1280.jpg 1280w, img/hero/yaaber-hero-1920.jpg 1920w, img/hero/yaaber-hero-2560.jpg 2560w, img/hero/yaaber-hero-3840.jpg 3840w" sizes="(max-width:820px) 143vw, 178vh" width="1920" height="1080" alt="A small white island shaped around a mint Y-shaped street, with a café, a record kiosk and a news cart at its foot." fetchpriority="high">
+      </picture>
+      <!-- hit areas: % of frame, from img/hero/anchors_pct.json (tools/p1_project_anchors.py) -->
+      <button class="hit" data-obj="reel"  style="left:36.7%;top:39.2%;width:13.1%;height:24.4%" aria-label="Café: share a reel"></button>
+      <button class="hit" data-obj="song"  style="left:62.8%;top:40.2%;width:11.9%;height:23.3%" aria-label="Music kiosk: share a song"></button>
+      <button class="hit" data-obj="news"  style="left:51.8%;top:57.5%;width:12.2%;height:16.2%" aria-label="News cart: share a headline"></button>
+      <button class="hit hit-y" data-obj="y" style="left:43%;top:25%;width:28%;height:21%" aria-label="The Y: where you and two friends meet"></button>
+    </div>
+  </div>
+  <div class="wrap hero-copy">
+    <h1 id="h1" class="display"><span class="h-a">Find it.</span><br><span class="hl">Yab it.</span><br><span class="h-a">Talk about it.</span></h1>
+    <p class="lede">To <b>Yab</b> is to send a reel, a song or a headline to a friend, then <b>chat, call or watch it together</b>. One friend or a whole group.</p>
+    <div class="ctas">
+      <a class="btn btn-light" href="#get">Try Yaaber<svg class="ic"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-ghost-dark" href="#how">How it works</a>
+    </div>
+    <div class="reassure">
+      <span class="live-pill"><span class="dot"></span>Open beta</span>
+      <span><svg class="ic"><use href="#i-check"/></svg>Explore as a guest</span>
+      <span><svg class="ic"><use href="#i-check"/></svg>No download</span>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <span><svg class="ic"><use href="#i-laptop"/></svg>Works in any browser</span>
+    <span><svg class="ic"><use href="#i-mobile"/></svg>iPhone &amp; Android in testing</span>
+    <span><svg class="ic"><use href="#i-users"/></svg>Share with friends or groups</span>
+    <span><svg class="ic"><use href="#i-eye"/></svg>Look around as a guest</span>
+  </div>
+</div>
+
+<!-- HOW -->
+<section id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 id="how-h" class="display rv">Sent, then<br>talked about.</h2></div>
+      <p class="sub rv" style="--d:.1s">On most apps a share ends at “sent”. On Yaaber it opens a chat with the person you sent it to, so you can talk about the reel or song right there.</p>
+    </div>
+    <div class="how-steps" id="howSteps">
+      <div class="how-line" aria-hidden="true"><i></i></div>
+      <div class="how-step rv"><div class="how-ic"><svg class="ic"><use href="#i-search"/></svg></div><div><h3>Find</h3><p>Reels, music and live news, picked around what you love.</p></div></div>
+      <div class="how-step rv" style="--d:.12s"><div class="how-ic"><svg class="ic"><use href="#i-send"/></svg></div><div><h3>Yab</h3><p>Send it to a friend or a group, with a note if you like.</p></div></div>
+      <div class="how-step rv" style="--d:.24s"><div class="how-ic"><svg class="ic"><use href="#i-chat"/></svg></div><div><h3>Talk</h3><p>Chat, call, or press play together and watch in sync.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="dark" aria-labelledby="feat-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 id="feat-h" class="display rv">Together,<br>from anywhere.</h2></div>
+      <p class="sub rv" style="--d:.1s">Share, chat, call and watch in one app.</p>
+    </div>
+    <div class="bento">
+      <article class="tile wide rv" style="min-height:340px">
+        <img class="tile-shot" src="img/two-rooms.jpg" alt="Two rooms in different cities playing the same reel at the same moment" loading="lazy" width="680" height="315">
+        <span class="badge"><svg class="ic"><use href="#i-tv"/></svg>Watch together</span>
+        <h3>Press play once. Everyone watches in sync.</h3>
+        <p>Watch the same reel at the same moment, and talk over it on a call.</p>
+      </article>
+      <article class="tile rv" style="--d:.08s"><span class="badge"><svg class="ic"><use href="#i-pin"/></svg>The Wall</span><h3>Pin what mattered</h3><p>Pin posts to a friend's Wall with a note. A scrapbook you build together.</p></article>
+      <article class="tile rv"><span class="badge"><svg class="ic"><use href="#i-chat"/></svg>Messages</span><h3>Chat one-to-one or in groups</h3><p>Every shared reel, song or story arrives ready to talk about.</p></article>
+      <article class="tile rv" style="--d:.08s"><span class="badge"><svg class="ic"><use href="#i-phone"/></svg>Calls</span><h3>Audio and video</h3><p>Go from a message to a call in one tap.</p></article>
+      <article class="tile rv" style="--d:.16s"><span class="badge"><svg class="ic"><use href="#i-news"/></svg>Live news</span><h3>Headlines worth a chat</h3><p>World, tech, business and local news, one tap from your friends.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section id="safety" aria-labelledby="safe-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 id="safe-h" class="display rv">What keeps<br>you in control.</h2></div>
+      <p class="sub rv" style="--d:.1s">These are the safety features in the app today.</p>
+    </div>
+    <div class="safety-grid">
+      <div class="card rv"><svg class="ic"><use href="#i-eye"/></svg><h3>Look before you join</h3><p>Explore Yaaber as a guest. No account needed to see what it's like.</p></div>
+      <div class="card rv" style="--d:.08s"><svg class="ic"><use href="#i-lock"/></svg><h3>Asked, not assumed</h3><p>Yaaber asks before loading content from other services, like YouTube.</p></div>
+      <div class="card rv" style="--d:.16s"><svg class="ic"><use href="#i-users"/></svg><h3>Friends and groups</h3><p>Chats are sorted into friends and groups, so you know who you're talking to.</p></div>
+      <div class="card rv" style="--d:.24s"><svg class="ic"><use href="#i-flag"/></svg><h3>Report a problem</h3><p>Something wrong? Report it from inside the app, with the details the team needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANISATIONS -->
+<section id="orgs" class="org" aria-labelledby="org-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 id="org-h" class="display rv">Help people find<br>the right next step.</h2></div>
+      <p class="sub rv" style="--d:.1s">A Companion lives inside Yaaber and guides people to the right information, person or service. Pick an industry to see how.</p>
+    </div>
+    <div class="org-grid">
+      <div class="ind-list" role="tablist" aria-label="Industries" id="indList"></div>
+      <div class="ind-panel rv" role="tabpanel" id="indPanel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GET -->
+<section id="get" aria-labelledby="get-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 id="get-h" class="display rv">Start in your browser.<br>Phone apps next.</h2></div>
+      <p class="sub rv" style="--d:.1s">The web app is open to everyone today. iPhone and Android are in invite-only testing.</p>
+    </div>
+    <div class="get-grid">
+      <div class="get primary rv"><svg class="ic"><use href="#i-globe"/></svg><span class="state live">Live</span><h3>Web app</h3><p>Look around as a guest, or create a profile. Works on phone, tablet and computer.</p><a class="btn btn-mint" href="#">Open Yaaber<svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <div class="get rv" style="--d:.08s"><svg class="ic"><use href="#i-mobile"/></svg><span class="state beta">Testing</span><h3>iPhone</h3><p>Join the testing team. Tell us your device and we'll send an invite.</p><a class="btn btn-ghost" href="#">Join testing</a></div>
+      <div class="get rv" style="--d:.16s"><svg class="ic"><use href="#i-mobile"/></svg><span class="state beta">Testing</span><h3>Android</h3><p>Same as iPhone. Testers help shape what ships first.</p><a class="btn btn-ghost" href="#">Join testing</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0" aria-labelledby="faq-h">
+  <div class="wrap faq-grid">
+    <div><h2 id="faq-h" class="display rv">Good to know.</h2></div>
+    <div class="rv">
+      <details><summary>What does “Yab” mean?<span class="pm"><svg class="ic" style="width:16px;height:16px"><use href="#i-plus"/></svg></span></summary><p class="ans">To yab something is to share it <i>and</i> start talking about it: a reel, a song or a headline sent to a friend that opens straight into a chat, a call or a watch-together.</p></details>
+      <details><summary>Do I need an account?<span class="pm"><svg class="ic" style="width:16px;height:16px"><use href="#i-plus"/></svg></span></summary><p class="ans">Not to look around. Explore as a guest first, and create a profile when you want to share and chat.</p></details>
+      <details><summary>Do I need to download anything?<span class="pm"><svg class="ic" style="width:16px;height:16px"><use href="#i-plus"/></svg></span></summary><p class="ans">No. Yaaber runs in your browser on phone, tablet or computer. Phone apps are in testing.</p></details>
+      <details><summary>Who can see what I share?<span class="pm"><svg class="ic" style="width:16px;height:16px"><use href="#i-plus"/></svg></span></summary><p class="ans">The people you send it to: one friend, or a group. If something goes wrong, report it from inside the app.</p></details>
+      <details><summary>What is Companion?<span class="pm"><svg class="ic" style="width:16px;height:16px"><use href="#i-plus"/></svg></span></summary><p class="ans">A guide inside Yaaber for organisations like colleges, clinics and clubs. It helps people find the right information, person or service. It's in development, with live demos.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + FINAL CTA -->
+<section id="about" style="padding-top:0" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="about-grid" style="margin-bottom:var(--s6)">
+      <div><h2 id="about-h" class="display rv">Built around<br>the conversation.</h2>
+        <p class="sub rv" style="margin-top:var(--s3)">Yaaber is built on one idea: sharing something should start a conversation. The team is growing, with roles open in Hyderabad.</p>
+        <p class="rv" style="margin-top:var(--s3)"><a class="btn btn-ghost" href="#">We're hiring · 5 roles<svg class="ic"><use href="#i-arrow"/></svg></a></p></div>
+      <div class="facts">
+        <div class="fact rv"><b>3</b><span>ways to talk: chat, call, watch</span></div>
+        <div class="fact rv" style="--d:.08s"><b>10</b><span>industry Companion demos</span></div>
+        <div class="fact rv" style="--d:.16s"><b>5</b><span>open roles</span></div>
+        <div class="fact rv" style="--d:.24s"><b>1</b><span>web app, live today</span></div>
+      </div>
+    </div>
+    <div class="final rv">
+      <h2 class="display">Found something good?<br>Yab it.</h2>
+      <p>Open Yaaber in your browser and send your first one to a friend.</p>
+      <div class="ctas"><a class="btn btn-mint" href="#">Try Yaaber<svg class="ic"><use href="#i-arrow"/></svg></a><a class="btn btn-ghost" style="background:#ffffff14;color:#fff;box-shadow:inset 0 0 0 1.5px #ffffff40" href="#orgs">For organisations</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="brand" href="#top" style="margin-bottom:12px"><span class="logo-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 3l8 9 8-9M12 12v10" stroke="#5fe0b0" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>yaaber</a><p style="margin:0;max-width:22em">Share it. Then talk about it.</p></div>
+      <div><h4>Product</h4><a href="#how">How it works</a><a href="#features">Features</a><a href="#safety">Safety</a><a href="#get">Get the app</a></div>
+      <div><h4>Organisations</h4><a href="#orgs">Companion</a><a href="#orgs">Industry demos</a><a href="#">Manual (PDF)</a></div>
+      <div><h4>Company</h4><a href="#about">About</a><a href="#">Careers</a><a href="#">Contact</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+    <div class="foot-base"><span>© Yaaber</span><span>Concept design by Radwan Jameel · radwanjml.github.io</span></div>
+  </div>
+</footer>
+
+<!-- design lab: compare nav variants -->
+<button class="lab-btn" id="labBtn" aria-expanded="false" aria-controls="lab"><svg class="ic"><use href="#i-sliders"/></svg><span>Nav lab</span></button>
+<aside class="lab" id="lab" aria-label="Navigation design options">
+  <h4>Compare the navigation</h4>
+  <p>Switch the header live. Your choice is remembered.</p>
+  <fieldset><legend>Position</legend><div class="seg">
+    <label><input type="radio" name="navPos" value="top"><span>Top</span></label>
+    <label><input type="radio" name="navPos" value="bottom"><span>Bottom</span></label></div></fieldset>
+  <fieldset><legend>On scroll</legend><div class="seg">
+    <label><input type="radio" name="navHide" value="on"><span>Hides</span></label>
+    <label><input type="radio" name="navHide" value="off"><span>Stays</span></label></div></fieldset>
+  <fieldset><legend>Material</legend><div class="seg">
+    <label><input type="radio" name="navMat" value="liquid"><span>Liquid</span></label>
+    <label><input type="radio" name="navMat" value="frosted"><span>Frosted</span></label>
+    <label><input type="radio" name="navMat" value="plain"><span>Plain</span></label></div></fieldset>
+  <p class="rec"><b>Recommended:</b> top, hides on scroll down and returns on scroll up, frosted. Bottom works best on phones, where thumbs live.</p>
+</aside>
+
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js"}}</script>
+<script src="site.js?v=9"></script>
+<script src="hero-still.js?v=6"></script>
+</body>
+</html>
