@@ -1,0 +1,72 @@
+/* ---- p1 step 5 (29 Oct): nav tone, texture, nav-aware spacing, hint, app tour. Loaded after styles.css ---- */
+
+/* green nav tone (Nav lab) */
+html[data-nav-tone=green][data-nav-mat=plain] .nav-in{background:var(--forest);box-shadow:var(--shadow),inset 0 0 0 1px #ffffff14}
+html[data-nav-tone=green][data-nav-mat=frosted] .nav-in{background:#0f3d2ec7;box-shadow:var(--shadow),inset 0 0 0 1px #ffffff1f}
+html[data-nav-tone=green][data-nav-mat=liquid] .nav-in{background:linear-gradient(180deg,#16533fa6,#0a2a2073);box-shadow:inset 0 1px 0 #ffffff40,inset 0 0 0 1px #ffffff24,0 12px 34px -12px #0008}
+html[data-nav-tone=green] .brand{color:var(--cream)}
+html[data-nav-tone=green] .nav-links a{color:#bcd6c9}
+html[data-nav-tone=green] .nav-links a:hover,html[data-nav-tone=green] .nav-links a[aria-current=true]{color:#fff;background:#ffffff14}
+html[data-nav-tone=green] .nav .btn-primary{background:var(--cream);color:var(--forest)}
+html[data-nav-tone=green] .menu-btn{color:var(--cream);background:#ffffff14}
+
+/* texture: the Y mark as a faint tile on dark surfaces; it fades out behind the island so it never competes */
+:root{--ytile:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath d='M29 27l7 8 7-8M36 35v9' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.hero-still::before{content:"";position:absolute;inset:0;background-image:var(--ytile);background-size:72px;opacity:.05;pointer-events:none;-webkit-mask-image:radial-gradient(60% 70% at 64% 52%,transparent 30%,#000 78%);mask-image:radial-gradient(60% 70% at 64% 52%,transparent 30%,#000 78%)}
+.dark{background-color:var(--forest);background-image:linear-gradient(#0f3d2ef0,#0f3d2ef0),var(--ytile);background-size:auto,72px}
+
+/* first-visit hint, gone after the first tap */
+.hero-hint{position:absolute;z-index:3;bottom:26px;margin:0;font-size:13px;color:#cfe3d8;background:#0a241c99;padding:7px 14px;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);white-space:nowrap;opacity:0;transition:opacity .5s;pointer-events:none}
+.hero-still.has-3d .hero-hint{opacity:1}
+.hero-still.tried .hero-hint,.hero-still.busy .hero-hint{opacity:0}
+
+@media(max-width:1024px){.hero-hint{position:relative;bottom:auto;display:table;margin:-4px auto 0;font-size:12.5px}}
+
+/* nav-aware spacing: with the nav at the bottom nothing reserves room at the top, and the CTAs clear the bar */
+@media(max-width:1024px){
+  html[data-nav-pos=bottom] .hero-still .art{margin-top:12px}
+  html[data-nav-pos=bottom] .hero-copy{padding-bottom:120px}
+}
+
+/* app tour */
+#inside{padding-block:var(--s6)}
+.inside-grid{display:grid;grid-template-columns:minmax(0,1.618fr) minmax(0,1fr);gap:var(--s5);align-items:center}
+.tour-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:var(--s4) 0 var(--s3)}
+.tour-tabs [role=tab]{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:600 14.5px/1 Figtree,sans-serif;padding:11px 16px;border-radius:999px;background:#0f3d2e0d;color:var(--ink);transition:background .2s,color .2s}
+.tour-tabs [role=tab] .ic{width:17px;height:17px}
+.tour-tabs [role=tab][aria-selected=true]{background:var(--forest);color:#fff}
+.tour-desc{font-size:17px;color:var(--ink);max-width:30em;min-height:3.2em;margin:0}
+.tour-note{font-size:12.5px;color:var(--mute-2);margin-top:var(--s3)}
+.phone{position:relative;justify-self:center;width:min(300px,78vw);aspect-ratio:9/19;border-radius:42px;background:#0a241c;padding:12px;box-shadow:var(--shadow-lg),inset 0 0 0 2px #ffffff14}
+.phone-screen{height:calc(100% - 58px);border-radius:30px 30px 10px 10px;background:var(--paper);overflow:hidden;padding:18px 14px;display:flex;flex-direction:column;gap:10px}
+.phone-screen.in>*{animation:psIn .45s var(--ease) both}
+.phone-screen.in>*:nth-child(2){animation-delay:.05s}.phone-screen.in>*:nth-child(3){animation-delay:.1s}.phone-screen.in>*:nth-child(4){animation-delay:.15s}.phone-screen.in>*:nth-child(5){animation-delay:.2s}
+@keyframes psIn{from{opacity:0;transform:translateY(8px)}}
+@media(prefers-reduced-motion:reduce){.phone-screen.in>*{animation:none}}
+.phone-bar{height:50px;margin-top:8px;display:flex;justify-content:space-around;align-items:center;color:#8fb3a3}
+.phone-bar span{display:grid;place-items:center;width:40px;height:40px;border-radius:14px;cursor:pointer}
+.phone-bar span.on{color:var(--forest);background:var(--mint)}
+.phone-bar .ic{width:19px;height:19px}
+.phone-screen .ic{width:16px;height:16px}
+.ps-head{font:800 20px/1 "Bricolage Grotesque",sans-serif;color:var(--forest);letter-spacing:-.02em}
+.ps-reel{position:relative;flex:1;border-radius:18px;background:linear-gradient(160deg,#2c6a55,#0f3d2e 70%);overflow:hidden}
+.ps-reel-cap{position:absolute;left:12px;bottom:12px;color:#fff;display:grid;gap:2px;font-size:13px}.ps-reel-cap span{opacity:.7;font-size:11px}
+.ps-reel-side{position:absolute;right:10px;bottom:12px;display:grid;gap:8px}
+.ps-reel-side i,.ps-row i,.ps-chat i{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#ffffff26;color:#fff;font-style:normal}
+.ps-reel-side i.on{background:var(--cream);color:var(--forest)}
+.ps-yab{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;border-radius:999px;background:var(--forest);color:#fff;font-weight:600;font-size:13.5px}
+.ps-row,.ps-chat{display:flex;align-items:center;gap:10px;padding:8px;border-radius:14px;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.ps-row div,.ps-chat div{flex:1;display:grid;font-size:13.5px}.ps-row small,.ps-chat small{color:var(--mute);font-size:11.5px}
+.ps-row i,.ps-chat i{background:#0f3d2e0f;color:var(--forest)}
+.ps-art{width:40px;height:40px;border-radius:10px;flex:none}.a1{background:linear-gradient(135deg,#a9c9b8,#16533f)}.a2{background:linear-gradient(135deg,#f3ecdc,#83938b)}.a3{background:linear-gradient(135deg,#dff5ea,#0f3d2e)}
+.ps-chips{display:flex;gap:6px;flex-wrap:wrap}.ps-chips span{font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:999px;background:#0f3d2e0d;color:var(--mute)}.ps-chips .on{background:var(--forest);color:#fff}
+.ps-card{display:grid;gap:4px;padding:12px;border-radius:16px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-size:14px}.ps-card small{color:var(--forest-2);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.ps-talk{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--forest)}.ps-talk .ic{width:14px;height:14px}
+.ps-av{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--sage);color:var(--forest);font-weight:700;flex:none}.ps-av.g{background:var(--forest);color:#fff}
+.ps-bubble{align-self:flex-start;background:var(--mint-soft);color:var(--forest);padding:9px 13px;border-radius:16px 16px 16px 4px;font-size:13.5px}
+.ps-wall{display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:1;align-content:start}
+.pin{padding:10px;border-radius:14px;font-size:13.5px;font-weight:600;display:grid;gap:6px;min-height:86px;color:var(--forest)}
+.pin small{display:flex;align-items:center;gap:4px;font-weight:500;font-size:10.5px;color:var(--mute)}.pin .ic{width:12px;height:12px}
+.p1{background:#dff5ea;transform:rotate(-1.5deg)}.p2{background:#f3ecdc;transform:rotate(1.2deg)}.p3{background:#fff;box-shadow:inset 0 0 0 1px var(--line);transform:rotate(1deg)}.p4{background:#e6efe9;transform:rotate(-1deg)}
+@media(max-width:860px){.inside-grid{grid-template-columns:1fr}.phone{width:min(280px,76vw)}}
+@media(max-width:860px){#inside{padding-block:var(--s5)}.inside-grid{gap:var(--s3)}.tour-tabs{margin:var(--s3) 0 var(--s2)}.tour-desc{min-height:0;font-size:16px}.tour-note{margin-top:var(--s1)}}

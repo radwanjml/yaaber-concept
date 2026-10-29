@@ -48,10 +48,12 @@ const uRes = { value: new THREE.Vector2(1, 1) }, uOcc = { value: 1 };
 function occlude(mat) {
   mat.onBeforeCompile = sh => {
     Object.assign(sh.uniforms, { uDepth: { value: depthTex }, uRes, uOcc, uDN: { value: DATA.dNear }, uDF: { value: DATA.dFar }, uCN: { value: camera.near }, uCF: { value: camera.far } });
-    sh.fragmentShader = 'uniform sampler2D uDepth; uniform vec2 uRes; uniform float uOcc, uDN, uDF, uCN, uCF;\n' + sh.fragmentShader.replace('void main() {', `void main() {
+    // view depth comes from the vertex stage: rebuilding it from gl_FragCoord.z loses precision on phone GPUs
+    sh.vertexShader = 'varying float vDZ;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  vDZ = -mvPosition.z;');
+    sh.fragmentShader = 'precision highp float;\nvarying float vDZ;\nuniform sampler2D uDepth; uniform vec2 uRes; uniform float uOcc, uDN, uDF, uCN, uCF;\n' + sh.fragmentShader.replace('void main() {', `void main() {
       vec3 dd = texture2D(uDepth, gl_FragCoord.xy / uRes).rgb;
       float dz = (dd.r * 65280.0 + dd.g * 255.0) / 65535.0;
-      float fz = (uCN * uCF) / (uCF - gl_FragCoord.z * (uCF - uCN));
+      float fz = vDZ;
       if (uOcc > 0.5 && dz > 0.0001 && dz < 0.999 && fz > uDN + dz * (uDF - uDN) + 0.012) discard;`);
   };
   return mat;
@@ -171,4 +173,5 @@ renderer.setAnimationLoop(now => {
   renderer.render(scene, camera);
 });
 hero.classList.add('has-3d');
+hero.querySelectorAll('.hit').forEach(h => h.addEventListener('click', () => hero.classList.add('tried'), { once: true }));
 if (location.search.includes('lab=1')) window.__y3 = { you, f1, f2, story, uOcc, uRes, renderer }; // debug handle for occlusion tests

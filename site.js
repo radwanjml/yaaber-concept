@@ -46,14 +46,14 @@
   const lab = $('#lab'), labBtn = $('#labBtn');
   function setLab(on) { lab.classList.toggle('on', on); labBtn.setAttribute('aria-expanded', on); }
   labBtn.onclick = () => setLab(!lab.classList.contains('on'));
-  const map = { navPos: 'navPos', navHide: 'navHide', navMat: 'navMat' };
+  const map = { navPos: 'navPos', navHide: 'navHide', navMat: 'navMat', navTone: 'navTone' };
   for (const name in map) {
     document.querySelectorAll(`input[name=${name}]`).forEach(inp => {
       inp.checked = root.dataset[map[name]] === inp.value;
       inp.addEventListener('change', () => {
         root.dataset[map[name]] = inp.value;
-        root.classList.remove('nav-hidden');
-        try { localStorage.setItem('yaaber-lab', JSON.stringify({ navPos: root.dataset.navPos, navHide: root.dataset.navHide, navMat: root.dataset.navMat })); } catch {}
+        root.classList.remove('nav-hidden'); dispatchEvent(new Event('resize')); // hero re-lays out for the nav position
+        try { localStorage.setItem('yaaber-lab', JSON.stringify({ navPos: root.dataset.navPos, navHide: root.dataset.navHide, navMat: root.dataset.navMat, navTone: root.dataset.navTone })); } catch {}
       });
     });
   }

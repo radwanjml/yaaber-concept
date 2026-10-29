@@ -9,18 +9,21 @@
   }));
 })();
 // 3D blockout layer: loaded after the page, so the still paints first on slow connections (Kwame).
-{ const img = document.querySelector('.hero-still img'), go = () => import('./hero3d.js?v=7').catch(e => console.warn('3D layer off:', e)); (img.decode ? img.decode() : Promise.resolve()).then(go, go); }
+{ const img = document.querySelector('.hero-still img'), go = () => import('./hero3d.js?v=8').catch(e => console.warn('3D layer off:', e)); (img.decode ? img.decode() : Promise.resolve()).then(go, go); }
 // Desktop layout (golden ratio): copy = left 38.2% of the 1240 container; island centred in the right 61.8%.
 // Frame facts (anchors_pct.json): island spans x 27-87% (centre 57%), y 8.8-87% (centre 48%) of the 16:9 frame.
 (() => {
-  const hero = document.querySelector('.hero-still'), frame = hero.querySelector('.frame'), NAV = 110, BOTTOM = 48;
+  const hero = document.querySelector('.hero-still'), frame = hero.querySelector('.frame');
   function lay() {
-    if (innerWidth <= 1024) { frame.removeAttribute('style'); return; }
+    if (innerWidth <= 1024) { frame.removeAttribute('style'); hero.querySelector('.hero-hint')?.removeAttribute('style'); return; }
     const vw = document.documentElement.clientWidth, hh = hero.clientHeight;
+    const bottomNav = document.documentElement.dataset.navPos === 'bottom', NAV = bottomNav ? 64 : 110, BOTTOM = bottomNav ? 110 : 48; // island clears the nav wherever it sits
     const pad = Math.min(34, Math.max(16, vw * 0.04)), cw = Math.min(1360, vw) - 2 * pad, cl = (vw - cw) / 2;
     const h = Math.min((hh - NAV - BOTTOM) / 0.78, (0.618 * cw * 0.98) / 1.0667); // island fits height and the right column
     const w = h * 16 / 9, cx = cl + cw * (0.382 + 0.618 / 2), cy = NAV + (hh - NAV - BOTTOM) / 2;
     Object.assign(frame.style, { width: w + 'px', height: h + 'px', left: (cx - 0.57 * w) + 'px', top: (cy - 0.48 * h) + 'px' });
+    const hint = hero.querySelector('.hero-hint'); // centred just under the island's rim (frame y 87%)
+    if (hint) Object.assign(hint.style, { left: cx + 'px', top: (cy - 0.48 * h + 0.9 * h) + 'px', bottom: 'auto', right: 'auto', transform: 'translateX(-50%)' });
   }
   addEventListener('resize', lay); lay();
 })();

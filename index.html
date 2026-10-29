@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-nav-pos="top" data-nav-hide="on" data-nav-mat="frosted">
+<html lang="en" data-nav-pos="top" data-nav-hide="on" data-nav-mat="frosted" data-nav-tone="white">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -16,7 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=21">
+<link rel="stylesheet" href="styles.css?v=22">
+<link rel="stylesheet" href="styles-p1s5.css?v=3">
 <script>if(new URLSearchParams(location.search).has('lab'))document.documentElement.classList.add('lab-on');try{const s=JSON.parse(localStorage.getItem('yaaber-lab')||'{}');for(const k in s)document.documentElement.dataset[k]=s[k];}catch{}</script>
 </head>
 <body>
@@ -103,6 +104,7 @@
       <button class="hit hit-y" data-obj="y" style="left:43%;top:25%;width:28%;height:21%" aria-label="The Y: where you and two friends meet"></button>
     </div>
   </div>
+  <p class="hero-hint" aria-hidden="true">Tap the café, the record kiosk or the news cart</p>
   <div class="wrap hero-copy">
     <h1 id="h1" class="display"><span class="h-a">Find it.</span><br><span class="hl">Yab it.</span><br><span class="h-a">Talk about it.</span></h1>
     <p class="lede">To <b>Yab</b> is to send a reel, a song or a headline to a friend, then <b>chat, call or watch it together</b>. One friend or a whole group.</p>
@@ -129,6 +131,29 @@
 </div>
 
 <!-- HOW -->
+<!-- INSIDE THE APP (p1 step 5): where reels, music, news, connect and the Wall live -->
+<section id="inside" aria-labelledby="inside-h">
+  <div class="wrap inside-grid">
+    <div class="inside-copy">
+      <h2 id="inside-h" class="display rv">Everything,<br>one tap away.</h2>
+      <p class="sub rv">Five tabs along the bottom of the app. Pick one to see what lives there.</p>
+      <div class="tour-tabs" role="tablist" aria-label="Yaaber tabs">
+        <button role="tab" aria-selected="true" data-t="reels"><svg class="ic"><use href="#i-film"/></svg>Reels</button>
+        <button role="tab" aria-selected="false" tabindex="-1" data-t="music"><svg class="ic"><use href="#i-music"/></svg>Music</button>
+        <button role="tab" aria-selected="false" tabindex="-1" data-t="news"><svg class="ic"><use href="#i-news"/></svg>News</button>
+        <button role="tab" aria-selected="false" tabindex="-1" data-t="connect"><svg class="ic"><use href="#i-chat"/></svg>Connect</button>
+        <button role="tab" aria-selected="false" tabindex="-1" data-t="wall"><svg class="ic"><use href="#i-pin"/></svg>Wall</button>
+      </div>
+      <p class="tour-desc" id="tourDesc" aria-live="polite"></p>
+      <p class="tour-note">Concept screens. The tabs follow Yaaber's features; the layout is a proposal.</p>
+    </div>
+    <div class="phone rv">
+      <div class="phone-screen" id="tourScreen" role="tabpanel" aria-label="Preview"></div>
+      <div class="phone-bar" aria-hidden="true"><span data-t="reels"><svg class="ic"><use href="#i-film"/></svg></span><span data-t="music"><svg class="ic"><use href="#i-music"/></svg></span><span data-t="news"><svg class="ic"><use href="#i-news"/></svg></span><span data-t="connect"><svg class="ic"><use href="#i-chat"/></svg></span><span data-t="wall"><svg class="ic"><use href="#i-pin"/></svg></span></div>
+    </div>
+  </div>
+</section>
+
 <section id="how" aria-labelledby="how-h">
   <div class="wrap">
     <div class="sec-head">
@@ -275,11 +300,15 @@
     <label><input type="radio" name="navMat" value="liquid"><span>Liquid</span></label>
     <label><input type="radio" name="navMat" value="frosted"><span>Frosted</span></label>
     <label><input type="radio" name="navMat" value="plain"><span>Plain</span></label></div></fieldset>
+  <fieldset><legend>Tone</legend><div class="seg">
+    <label><input type="radio" name="navTone" value="white"><span>White</span></label>
+    <label><input type="radio" name="navTone" value="green"><span>Green</span></label></div></fieldset>
   <p class="rec"><b>Recommended:</b> top, hides on scroll down and returns on scroll up, frosted. Bottom works best on phones, where thumbs live.</p>
 </aside>
 
 <script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js"}}</script>
-<script src="site.js?v=9"></script>
-<script src="hero-still.js?v=7"></script>
+<script src="site.js?v=10"></script>
+<script src="hero-still.js?v=9"></script>
+<script src="tour.js?v=1"></script>
 </body>
 </html>
