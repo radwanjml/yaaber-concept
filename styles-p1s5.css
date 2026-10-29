@@ -84,3 +84,8 @@ html[data-nav-tone=green] .menu-btn{color:var(--cream);background:#ffffff14}
 .tour-tabs [role=tab]:not([aria-selected=true]),.lab,.sheet{background:linear-gradient(180deg,#ffffffcc,#ffffff80);-webkit-backdrop-filter:var(--lg-blur);backdrop-filter:var(--lg-blur);box-shadow:var(--lg-edge),0 10px 30px -14px #0f3d2e40}
 .tour-tabs [role=tab][aria-selected=true]{box-shadow:inset 0 1px 0 #ffffff33,0 10px 22px -12px #0f3d2e99}
 .phone-bar span.on{box-shadow:inset 0 1px 0 #ffffffb3,0 6px 14px -6px #5fe0b099}
+/* pins = the nav's green liquid glass, so they read on white roofs (cream glass vanished into the white) */
+.hero-pin{width:40px;height:40px;margin:-20px 0 0 -20px;color:var(--cream);background:linear-gradient(180deg,#16533fcc,#0a2a2099);-webkit-backdrop-filter:var(--lg-blur);backdrop-filter:var(--lg-blur);box-shadow:inset 0 1px 0 #ffffff59,inset 0 -1px 0 #ffffff1a,inset 0 0 0 1px #ffffff2e,0 10px 22px -8px #0f3d2ecc}
+.hero-pin::after{content:"";position:absolute;inset:2px 6px auto;height:45%;border-radius:999px;background:linear-gradient(180deg,#ffffff38,transparent);pointer-events:none}
+.hero-pin .ic{width:18px;height:18px;position:relative}
+@media(max-width:1024px){.hero-pin{width:32px;height:32px;margin:-16px 0 0 -16px}.hero-pin .ic{width:15px;height:15px}}
