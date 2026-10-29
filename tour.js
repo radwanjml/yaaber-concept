@@ -7,7 +7,7 @@
       html: `<div class="ps-head">Reels</div>
         <div class="ps-reel"><div class="ps-reel-cap"><b>Street food, Old City</b><span>0:24</span></div>
           <div class="ps-reel-side"><i>${ic('i-heart')}</i><i class="on">${ic('i-send')}</i><i>${ic('i-chat')}</i></div></div>
-        <div class="ps-yab">${ic('i-send')} Yab to Zara</div>`,
+        <div class="ps-yab">${ic('i-send')} Yab N</div>`,
     },
     music: {
       desc: 'Find a song, send it, and listen together while you talk about it.',
@@ -28,13 +28,13 @@
       desc: 'Chats sorted into friends and groups. Go from a message to an audio or video call, or press play and watch together.',
       html: `<div class="ps-head">Connect</div>
         <div class="ps-chips"><span class="on">Friends</span><span>Groups</span></div>
-        <div class="ps-chat"><span class="ps-av">Z</span><div><b>Zara</b><small>sent you a reel</small></div><i>${ic('i-phone')}</i></div>
+        <div class="ps-chat"><span class="ps-av">N</span><div><b>N</b><small>sent you a reel</small></div><i>${ic('i-phone')}</i></div>
         <div class="ps-chat"><span class="ps-av g">W</span><div><b>Weekend crew</b><small>4 people · watching now</small></div><i>${ic('i-tv')}</i></div>
         <div class="ps-bubble">this is so us 😂</div>`,
     },
     wall: {
       desc: 'Pin a post to a friend’s Wall with a note. A scrapbook you build together.',
-      html: `<div class="ps-head">Zara’s Wall</div>
+      html: `<div class="ps-head">N’s Wall</div>
         <div class="ps-wall"><div class="pin p1"><small>${ic('i-pin')} from you</small>that café 🍵</div><div class="pin p2"><small>${ic('i-pin')} from Omar</small>our song</div>
         <div class="pin p3"><small>${ic('i-pin')} from you</small>read this!</div><div class="pin p4"><small>${ic('i-pin')} from Lina</small>next trip?</div></div>`,
     },

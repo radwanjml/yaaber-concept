@@ -70,3 +70,17 @@ html[data-nav-tone=green] .menu-btn{color:var(--cream);background:#ffffff14}
 .p1{background:#dff5ea;transform:rotate(-1.5deg)}.p2{background:#f3ecdc;transform:rotate(1.2deg)}.p3{background:#fff;box-shadow:inset 0 0 0 1px var(--line);transform:rotate(1deg)}.p4{background:#e6efe9;transform:rotate(-1deg)}
 @media(max-width:860px){.inside-grid{grid-template-columns:1fr}.phone{width:min(280px,76vw)}}
 @media(max-width:860px){#inside{padding-block:var(--s5)}.inside-grid{gap:var(--s3)}.tour-tabs{margin:var(--s3) 0 var(--s2)}.tour-desc{min-height:0;font-size:16px}.tour-note{margin-top:var(--s1)}}
+
+/* ---- p1 step 6 (29 Oct): liquid glass carried through the site (same recipe as the chosen nav) ---- */
+:root{--lg-blur:blur(8px) saturate(1.9) contrast(1.05);--lg-edge:inset 0 1px 0 #ffffffd9,inset 0 -1px 0 #ffffff40,inset 0 0 0 1px #ffffff59}
+/* on the island (pins sit on white buildings, so a touch of cream keeps them visible) */
+.hero-pin{background:linear-gradient(180deg,#ffffffd0,#f6f3ea80);-webkit-backdrop-filter:var(--lg-blur);backdrop-filter:var(--lg-blur);box-shadow:var(--lg-edge),0 8px 18px -8px #0f3d2e99}
+/* glass on the dark green */
+.hero-hint,.hero-motion,.hero-still .live-pill,.btn-ghost-dark,.hero-still .toast{background:linear-gradient(180deg,#ffffff2e,#ffffff0d);-webkit-backdrop-filter:var(--lg-blur);backdrop-filter:var(--lg-blur);box-shadow:inset 0 1px 0 #ffffff4d,inset 0 0 0 1px #ffffff26,0 10px 26px -14px #000a}
+.btn-ghost-dark:hover{background:linear-gradient(180deg,#ffffff40,#ffffff14)}
+.hero-still .toast{color:#f6f3ea}
+.dark .tile,.dark .card{background:linear-gradient(180deg,#ffffff14,#ffffff05);box-shadow:inset 0 1px 0 #ffffff26,inset 0 0 0 1px #ffffff14}
+/* glass on paper */
+.tour-tabs [role=tab]:not([aria-selected=true]),.lab,.sheet{background:linear-gradient(180deg,#ffffffcc,#ffffff80);-webkit-backdrop-filter:var(--lg-blur);backdrop-filter:var(--lg-blur);box-shadow:var(--lg-edge),0 10px 30px -14px #0f3d2e40}
+.tour-tabs [role=tab][aria-selected=true]{box-shadow:inset 0 1px 0 #ffffff33,0 10px 22px -12px #0f3d2e99}
+.phone-bar span.on{box-shadow:inset 0 1px 0 #ffffffb3,0 6px 14px -6px #5fe0b099}

@@ -53,7 +53,7 @@
       inp.addEventListener('change', () => {
         root.dataset[map[name]] = inp.value;
         root.classList.remove('nav-hidden'); dispatchEvent(new Event('resize')); // hero re-lays out for the nav position
-        try { localStorage.setItem('yaaber-lab', JSON.stringify({ navPos: root.dataset.navPos, navHide: root.dataset.navHide, navMat: root.dataset.navMat, navTone: root.dataset.navTone })); } catch {}
+        try { localStorage.setItem('yaaber-lab-v2', JSON.stringify({ navPos: root.dataset.navPos, navHide: root.dataset.navHide, navMat: root.dataset.navMat, navTone: root.dataset.navTone })); } catch {}
       });
     });
   }
